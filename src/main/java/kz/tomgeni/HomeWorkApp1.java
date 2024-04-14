@@ -1,6 +1,6 @@
 package kz.tomgeni;
 
-public class HomeWorkApp {
+public class HomeWorkApp1 {
     // Задание 1.
     public static void main(String[] args) {
         // Задание 6.
