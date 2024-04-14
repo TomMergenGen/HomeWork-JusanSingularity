@@ -8,12 +8,14 @@ public class HomeWorkApp2 {
     public static void main(String[] args) {
 
         // Задание 1.
+        System.out.println("Задание #1");
         int[] array1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         int[] newArray1 = converterZeroOne(array1);
         System.out.println(Arrays.toString(newArray1));
         //-------------------------------------------------
 
         // Задание 2.
+        System.out.println("Задание #2");
         int[] array2 = new int[8];
         int a = 0;
         int someNum = 0;
@@ -26,6 +28,7 @@ public class HomeWorkApp2 {
         //-------------------------------------------------
 
         // Задание 3.
+        System.out.println("Задание #3");
         int[] array3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         int[] newArray3 = powSixArray(array3);
         System.out.println(Arrays.toString(newArray3));
@@ -33,6 +36,7 @@ public class HomeWorkApp2 {
 
 
         // Задание 4.
+        System.out.println("Задание #4");
         int[][] matrix = new int[5][5];
 
         for (int i = 0; i < matrix.length; i++) {
@@ -46,6 +50,7 @@ public class HomeWorkApp2 {
         //-------------------------------------------------
 
         // Задание 5.
+        System.out.println("Задание #5");
         Random r = new Random();
         int[] array4 = new int[10];
         System.out.println("Исходный массив: ");
@@ -58,6 +63,7 @@ public class HomeWorkApp2 {
         //-------------------------------------------------
 
         //Задание 6.
+        System.out.println("Задание #6");
         int[] array5 = {2, 2, 2, 1, 2, 2, 10, 1};
         System.out.println(checkBalance(array5)); // Вернет true
 
@@ -66,10 +72,11 @@ public class HomeWorkApp2 {
         //-------------------------------------------------
 
         //Задание 7.
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println("Задание #7");
+        int[] array7 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int n = -1;
-        shiftArray(arr, n);
-        for (int num : arr) {
+        shiftArray(array7, n);
+        for (int num : array7) {
             System.out.print(num + " ");
         }
     }
@@ -119,43 +126,39 @@ public class HomeWorkApp2 {
             totalSum += num;
         }
 
-        // Переменная для хранения суммы левой части массива
         int leftSum = 0;
 
-        // Проходим по элементам массива и сравниваем сумму левой части и правой части
         for (int num : array) {
             if (leftSum == totalSum) {
-                return true; // Если суммы равны, возвращаем true
+                return true;
             }
-            totalSum -= num; // Вычитаем текущий элемент из общей суммы
-            leftSum += num; // Прибавляем текущий элемент к сумме левой части
+            totalSum -= num;
+            leftSum += num;
         }
 
-        // Если равновесной точки не найдено, возвращаем false
         return false;
     }
 
     public static void shiftArray(int[] arr, int n) {
         int length = arr.length;
-        // Если n равно 0 или кратно длине массива, то массив не изменится
+
         if (n == 0 || n % length == 0) {
             return;
         }
-        // Если n положительное, смещаем элементы вправо
+
         if (n > 0) {
-            n = n % length; // Приводим n к диапазону [0, length)
-            reverse(arr, 0, length - 1); // Переворачиваем весь массив
-            reverse(arr, 0, n - 1); // Переворачиваем первую часть массива (первые n элементов)
-            reverse(arr, n, length - 1); // Переворачиваем вторую часть массива (оставшиеся элементы)
-        } else { // Если n отрицательное, смещаем элементы влево
-            n = Math.abs(n) % length; // Приводим n к диапазону [0, length)
-            reverse(arr, 0, length - 1); // Переворачиваем весь массив
-            reverse(arr, 0, length - n - 1); // Переворачиваем первую часть массива (первые length - n элементов)
-            reverse(arr, length - n, length - 1); // Переворачиваем вторую часть массива (последние n элементов)
+            n = n % length;
+            reverse(arr, 0, length - 1);
+            reverse(arr, 0, n - 1);
+            reverse(arr, n, length - 1);
+        } else {
+            n = Math.abs(n) % length;
+            reverse(arr, 0, length - 1);
+            reverse(arr, 0, length - n - 1);
+            reverse(arr, length - n, length - 1);
         }
     }
 
-    // Метод для переворота части массива между индексами start и end включительно
     private static void reverse(int[] arr, int start, int end) {
         while (start < end) {
             int temp = arr[start];
