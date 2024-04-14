@@ -11,14 +11,14 @@ public class HomeWorkApp {
     }
 
     // Задание 2.
-    static void printThreeWords() {
+    public static void printThreeWords() {
         System.out.println("Orange");
         System.out.println("Banana");
         System.out.println("Apple");
     }
 
     // Задание 3.
-    static void checkSumSign (int a, int b){
+    public static void checkSumSign (int a, int b){
         int sum = a+b;
         if (sum>=0){
             System.out.println("Сумма положительна");
@@ -28,7 +28,7 @@ public class HomeWorkApp {
     }
 
     // Задание 4.
-    static void printColor (int value){
+    public static void printColor (int value){
         if (value <= 0){
             System.out.println("Красный");
         }else if (value <= 100){
@@ -39,7 +39,7 @@ public class HomeWorkApp {
     }
 
     // Задание 5.
-    static void compareNumbers (int a, int b){
+    public static void compareNumbers (int a, int b){
         if (a>=b){
             System.out.println("a>=b");
         } else {
